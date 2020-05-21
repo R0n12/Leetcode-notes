@@ -36,7 +36,7 @@
 >### Space: additional space required to store counts. two-pass choice
 ---
 
-## Dual-pivot partitioning sub-routine Quick Sort
+## Dual-pivot partitioning sub-routine Quick Sort __Swapping__
 
 ```Java
 // basic idea
