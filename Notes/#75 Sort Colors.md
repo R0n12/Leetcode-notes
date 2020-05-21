@@ -61,4 +61,5 @@ private void swap(int[] nums, int i, int j) {
 ```
 
 >No need for additional structures, in place one pass swapping.  
->Runtime: $\mathcal{O}(n)$
+>Runtime: $\mathcal{O}(n)$  
+>重点，设计low division ptr和upper division ptr以及遍历ptr,只用替换即可达到效果，和快速排序异曲同工。
