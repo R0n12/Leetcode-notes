@@ -40,6 +40,9 @@ class Solution {
 ```
 >1. initialize java list with: `new ArrayList<Integer>();`, `ArrayList` is not an abstract class.
 
+>Runtime: $\mathcal{O}(n)$, $T(n) = 2T(n/2)+c$  
+>Space: $\mathcal{O}(n)$ worst case, $\mathcal{O}(logn)$ average case
+
 ## Second Try: Iterative
 
 ```Java
@@ -75,3 +78,6 @@ class Solution {
     }
 }
 ```
+>Runtime: $\mathcal{O}(n)$ , visiting each node exactly once  
+>Space: $\mathcal{O}(n)$, keeping the entire tree in the stack.
+

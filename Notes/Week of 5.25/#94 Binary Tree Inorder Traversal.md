@@ -45,6 +45,9 @@ class Solution {
 > 1. check if root has a value: Exception input `[]`
 > 2. check if left child or right child has a value.
 
+>Runtime: $\mathcal{O}(n)$, $T(n) = 2T(n/2)+c$  
+>Space: $\mathcal{O}(n)$ worst case, $\mathcal{O}(logn)$ average case
+
 ## First Try: Iterative
 
 ```Java
@@ -82,5 +85,9 @@ class Solution {
 ```
 
 > 1. Java Stack Initialization: `Stack<TreeNode> temp = Stack<TreeNode>();`
+
+>Runtime: $\mathcal{O}(n)$ , visiting each node exactly once  
+>Space: $\mathcal{O}(n)$, keeping the entire tree in the stack.
+
 
 
