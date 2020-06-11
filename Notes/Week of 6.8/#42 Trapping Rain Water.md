@@ -111,7 +111,36 @@ replace the current top with updated new top height.
 >### Runtime: $\mathcal{O}(n)$, require looping through entire array only once
 >### Space: $\mathcal{O}(n)$, stack can take up array space when encountering a flat or continuous stair structure
 
+## Double Pointers
 
+```Java
+    class Solution {
+    public int trap(int[] height) {
+        if(height.length == 0){
+            return 0;
+        }
+        int ans = 0;
+        int left = 0, right = height.length-1;
+        int leftMax = 0, rightMax = 0;
+        while(left<right){
+            if(height[left]>leftMax)leftMax = height[left];
+            if(height[right]>rightMax)rightMax = height[right];
+            if(leftMax<rightMax){
+                ans += Math.max(0, leftMax-height[left]);
+                left++;
+            }else{
+                ans += Math.max(0, rightMax-height[right]);
+                right--;
+            }
+        }
+        return ans;
+    }
+    }
+```
+__Important Concept__: when finding the left and right bound, when left <= right , the trapped water is always dependent on the left bound, that is to say, the only we maintain two pointers, one to the left and one to the right, than move it towards center, along the way, we can add up trapped water by comparing updated updated left and right bounds.
+
+>### Runtime: $\mathcal{O}(n)$, only iterate thru array once.
+>### Space: $\mathcal{O}(1)$, no extra space required to store.
 
 
 
