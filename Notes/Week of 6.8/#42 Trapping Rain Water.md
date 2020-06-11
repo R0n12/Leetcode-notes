@@ -75,6 +75,47 @@ __Calculating areas using repeated shaded area approach__
 >### Runtime: $\mathcal{O}(n)$, no more inside loops
 >### Space: $\mathcal{O}(n)$, extra space for `left_max` and `right_max`.
 
+## Using Stacks
+
+```Java
+    class Solution {
+        public int trap(int[] height) {
+            int current_index = 0;
+            Stack<Integer> st = new Stack<Integer>();
+            int ans = 0;
+            /*loop thru all the index*/
+            while(current_index<height.length){
+                /*when the new top height need to be updated*/
+                while(!st.isEmpty()&&height[current_index]>height[st.peek()]){
+                    // pop out the current top
+                    int top_index = st.pop();
+                    if(st.isEmpty()){
+                        break;
+                    }
+                    int dist = current_index - st.peek() - 1;// calculate horizontal distance
+                    int bounded_height = Math.min(height[current_index], height[st.peek()]) - height[top_index];// calculate bounded height
+                    ans += dist * bounded_height;// area calculation
+                }
+                st.push(current_index++);// update new top height
+            }
+            return ans;
+        }
+    }
+```
+Using Stack to keep track of the index of each height.
+
+if the current height is bigger than current stack top, calculate previous bounded trapped rain area.
+
+replace the current top with updated new top height.
+
+>### Runtime: $\mathcal{O}(n)$, require looping through entire array only once
+>### Space: $\mathcal{O}(n)$, stack can take up array space when encountering a flat or continuous stair structure
+
+
+
+
+
+
 
 
 
