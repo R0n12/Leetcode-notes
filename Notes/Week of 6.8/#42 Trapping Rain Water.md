@@ -68,7 +68,7 @@ total: `ans += Math.min(left_max, right_max)-height[current]`
 Store heights from left and from right until a certain new max point.  
 Loop through the `height` array and add the max difference on the given current index using `left_max` and `right_max`
 
-![alt text](Week%20of%206.8%20Images/#42WaterDP.png)
+![alt text](Week%20of%206.8%20Images/42_WaterDP.png)
 
 __Calculating areas using repeated shaded area approach__
 
