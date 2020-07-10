@@ -59,3 +59,29 @@
   * `result.put(key, value)`
   * `result.get(key)` -> value
   * `result.containsKey(key)`
+
+## HashMap One-Pass
+
+```Java
+    class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> temp = new HashMap<>();
+        int[] result = new int[2];
+        
+        for(int a = 0; a < nums.length; a ++){
+            int complement = target - nums[a];
+            if(temp.containsKey(complement) && temp.get(complement) != a){
+                result[0] = a;
+                result[1] = temp.get(complement);
+            }else{
+                temp.put(nums[a],a);
+            }
+        }
+        
+        return result;
+    }
+}
+```
+
+* **Logic**
+  * Instead of first create the full map, this method recorded elt as needed and necessarily.
