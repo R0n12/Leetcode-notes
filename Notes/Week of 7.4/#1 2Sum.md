@@ -27,6 +27,8 @@
   * start subarray at one position after the first index
 * **Java**
   * `int[]` initialization with `new int[]{p1,p2,p3...}` customized number of parameters
+* **Runtime**: $\mathcal{O}(n^2)$
+* **Space**: $\mathcal{O}(1)$
 
 ## HashMap Two-Pass
 
@@ -59,6 +61,9 @@
   * `result.put(key, value)`
   * `result.get(key)` -> value
   * `result.containsKey(key)`
+* **Runtime**: $\mathcal{O}(n)$
+  * `HashMap` reduce look up time to $1$
+* **Space**: $\mathcal{O}(n)$
 
 ## HashMap One-Pass
 
@@ -85,3 +90,6 @@
 
 * **Logic**
   * Instead of first create the full map, this method recorded elt as needed and necessarily.
+* **Runtime**: $\mathcal{O}(n)$
+  * `HashMap` reduce look up time to $1$
+* **Space**: $\mathcal{O}(n)$
