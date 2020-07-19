@@ -41,4 +41,12 @@
 
 * **Logic**
   * Use Backtracking to solve
-  * 
+  * Using recursion to solve
+  * first, the big while loop to make each digit as the first digit once -> swap `first` with the `i`th elt
+  * Then, in the recursion, make permutation of the `i+1` th elt to the end
+  * in the end, swap back head and tail.
+* **Java**
+  * `Collections.swap()`
+  * `List output = new LinkedList()`
+* **Runtime** $\mathcal{O}(N!)$ -> $\mathcal{O}(N * N!)$
+* **Space** $\mathcal{O}(N!)$
