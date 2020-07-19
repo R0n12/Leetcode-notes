@@ -43,7 +43,7 @@ public class Solution {
   * if the array is in total descending order, no next permutation
   * try to find from the **right**, the first pair of elts that are in descending order, that is `nums[i-1] < nums[i]`
   * than the elts to the **right** of `nums[i-1]` (exclusive) is in descending order
-  * just from the **right**, find the elt just bigger than `nus[i-1]`, swap it
+  * just from the **right**, find the elt just bigger than `nums[i-1]`, swap it
   * and then, reverse the **right** array so that the next smallest permutation is guaranteed.
 * **Runtime**: $\mathcal{O}(n)$
 * **Space**: $\mathcal{O}(1)$
