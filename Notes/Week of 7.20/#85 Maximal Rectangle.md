@@ -48,4 +48,9 @@
   * calculate max area for each cell -> $N\cdot M$
   * for each cell, count up toward the first row -> $N$
 * **Space**: $\mathcal{O}(NM)$ -> equal `dp[][]` matrix
+  
+> 1. 也是另一种遍历吧，通过存储一定的宽度在另一个数据结构里来加快最大面积的查找。
+> 2. 依旧是针对每个点的遍历
+
+
 
