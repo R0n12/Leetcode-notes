@@ -97,17 +97,29 @@ No extra storage needed, $\mathcal{O}(1)$ space complexity.
         Stack < Integer > stack = new Stack < > ();
         stack.push(-1);
         int maxarea = 0;
+        // 1st Loop
         for (int i = 0; i < heights.length; ++i) {
             while (stack.peek() != -1 && heights[stack.peek()] >= heights[i])
                 maxarea = Math.max(maxarea, heights[stack.pop()] * (i - stack.peek() - 1));
             stack.push(i);
         }
+        //2nd Loop
         while (stack.peek() != -1)
             maxarea = Math.max(maxarea, heights[stack.pop()] * (heights.length - stack.peek() -1));
         return maxarea;
     }
 }
 ```
+![alt text](Week%20of%207.20%20Images/8401.jpg)
+* **Logic**
+  * 把被bound的上升区间的重叠面积全部算出来
+  * 波谷以及未bound区间的重叠面积最后算
+  * 上升区域算完就可以Pop out
+  * 但是波谷保留，留到最后底部重叠面积的计算
+* **Runtime**： $\mathcal{O}(N)$, N:length
+* **Space**: $\mathcal{O}(N)$
+
+
 
 
 
